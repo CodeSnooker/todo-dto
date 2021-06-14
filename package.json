@@ -2,14 +2,32 @@
   "name": "dtos",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
+  "dependencies": {
+    "dtslint": "4.1.0"
+  },
+  "files": [
+    "lib/**/*"
+  ],
   "keywords": [],
   "author": "Paras Mendiratta <code.snooker@gmail.com>",
   "license": "BSD",
   "devDependencies": {
+    "prettier": "2.3.1",
+    "tslint": "6.1.3",
+    "tslint-config-prettier": "1.18.0",
     "typescript": "4.3.2"
   }
 }
