@@ -1,5 +1,5 @@
-export interface Todo {
-  title: string;
-  description: string;
-  id: string;
+export class Todo {
+  title!: string;
+  description!: string;
+  id!: string;
 }
