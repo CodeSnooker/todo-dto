@@ -6,7 +6,8 @@
     "outDir": "./lib",
     "strict": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
