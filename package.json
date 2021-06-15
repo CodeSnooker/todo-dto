@@ -16,6 +16,7 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
+    "class-validator": "0.13.1",
     "dtslint": "4.1.0"
   },
   "files": [
