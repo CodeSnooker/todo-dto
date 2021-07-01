@@ -1,11 +1,12 @@
 {
-  "name": "dtos",
-  "version": "1.0.3",
+  "name": "alphaa-bo",
+  "version": "1.0.22",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "buildonly": "tsc",
+    "build": "npm run build && npm publish",
     "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,10 +15,9 @@
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
+
   },
   "dependencies": {
-    "class-validator": "0.13.1",
-    "dtslint": "4.1.0"
   },
   "files": [
     "lib/**/*"
@@ -26,7 +26,10 @@
   "author": "Paras Mendiratta <code.snooker@gmail.com>",
   "license": "BSD",
   "devDependencies": {
+    "@nestjs/common": "^7.6.18",
+    "mongoose": "^5.13.0",
     "prettier": "2.3.1",
+    "rxjs": "^7.1.0",
     "tslint": "6.1.3",
     "tslint-config-prettier": "1.18.0",
     "typescript": "4.3.2"
